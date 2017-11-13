@@ -6,7 +6,7 @@ This mod is a common-code library mod for oneandonlyflexo's mods.
 
 ## Features
 
-* It enables the rest of my mods.  That's kind of a features
+* It enables the rest of my mods.  That's kind of a feature.
 * Not really anything else...
 
 ## Use in Modpacks
