@@ -1,15 +1,15 @@
 ![](src/main/resources/assets/nibbler/logo.png)
 
-##Fire up the grill!
+## Fire up the grill!
 
 This mod is a common-code library mod for oneandonlyflexo's mods.
 
-##Features
+## Features
 
 * It enables the rest of my mods.  That's kind of a features
 * Not really anything else...
 
-##Use in Modpacks
+## Use in Modpacks
 
 You should probably include this in any modpack that requires it.  Do as you 
 wish with this one.
