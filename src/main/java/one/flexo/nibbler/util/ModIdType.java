@@ -1,13 +1,13 @@
 /*******************************************************************************
  * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
- * https://creativecommons.org/licenses/by-nc-nd/4.0/
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
  *
- * This file is part of Bark Books, which is open source:
- * https://github.com/oneandonlyflexo/barkbooks
+ * This file is part of Nibbler, which is open source:
+ * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.barkbooks.util;
+package one.flexo.nibbler.util;
 
-import one.flexo.barkbooks.ModInfo;
+import one.flexo.nibbler.NibblerInfo;
 
 /**
  * A utility enum for getting the different types of ids that need the modid as a prefix.
@@ -29,7 +29,7 @@ public enum ModIdType {
 	private String delimiter;
 
 	public String getId(String name) {
-		return ModInfo.modid + getSuffix(name);
+		return NibblerInfo.modid + getSuffix(name);
 	}
 
 	public String getSuffix(String name) {

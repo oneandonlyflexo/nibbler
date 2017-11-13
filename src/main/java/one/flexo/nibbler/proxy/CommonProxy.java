@@ -1,11 +1,11 @@
 /*******************************************************************************
  * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
- * https://creativecommons.org/licenses/by-nc-nd/4.0/
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
  *
- * This file is part of Bark Books, which is open source:
- * https://github.com/oneandonlyflexo/barkbooks
+ * This file is part of Nibbler, which is open source:
+ * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.barkbooks.proxy;
+package one.flexo.nibbler.proxy;
 
 import java.io.File;
 
@@ -13,8 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
-import one.flexo.barkbooks.ModDimensions;
-import one.flexo.barkbooks.config.Config;
+import one.flexo.nibbler.config.Config;
 
 @Mod.EventBusSubscriber
 public abstract class CommonProxy {
@@ -29,8 +28,6 @@ public abstract class CommonProxy {
 		File directory = e.getModConfigurationDirectory();
 		config = new Configuration(new File(directory.getPath(), "modtut.cfg"));
 		Config.readConfig();
-
-		ModDimensions.init();
 	}
 
 	/**

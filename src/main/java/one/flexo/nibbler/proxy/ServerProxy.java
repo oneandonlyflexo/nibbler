@@ -1,11 +1,11 @@
 /*******************************************************************************
  * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
- * https://creativecommons.org/licenses/by-nc-nd/4.0/
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
  * 
- * This file is part of Bark Books, which is open source:
- * https://github.com/oneandonlyflexo/barkbooks
+ * This file is part of Nibbler, which is open source:
+ * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.barkbooks.proxy;
+package one.flexo.nibbler.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;

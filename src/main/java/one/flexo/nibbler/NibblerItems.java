@@ -1,11 +1,11 @@
 /*******************************************************************************
  * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
- * https://creativecommons.org/licenses/by-nc-nd/4.0/
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
  *
- * This file is part of Bark Books, which is open source:
- * https://github.com/oneandonlyflexo/barkbooks
+ * This file is part of Nibbler, which is open source:
+ * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.barkbooks;
+package one.flexo.nibbler;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -15,27 +15,18 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import one.flexo.barkbooks.item.BarkItems;
-import one.flexo.barkbooks.item.KnifeItems;
-import one.flexo.barkbooks.item.enums.BarkItemsEnum;
-import one.flexo.barkbooks.item.enums.BarkKnifeEnum;
-import one.flexo.barkbooks.util.IModelRegister;
+import one.flexo.nibbler.util.IModelRegister;
 
 
 @Mod.EventBusSubscriber
-@ObjectHolder("barkbooks")
-public class ModItems {
-
-	public static final BarkItems bark_items = null;
-	public static final KnifeItems bark_knives = null;
-
-
+@ObjectHolder("nibbler")
+public class NibblerItems {
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(
-				new BarkItems("bark_items", BarkItemsEnum.class),
-				new KnifeItems("bark_knives", BarkKnifeEnum.class));
+				//Nothing here
+				);
 	}
 
 	@SideOnly(Side.CLIENT)

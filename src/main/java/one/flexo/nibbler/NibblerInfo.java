@@ -1,11 +1,11 @@
 /*******************************************************************************
  * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
- * https://creativecommons.org/licenses/by-nc-nd/4.0/
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
  *
- * This file is part of Bark Books, which is open source:
- * https://github.com/oneandonlyflexo/barkbooks
+ * This file is part of Nibbler, which is open source:
+ * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.barkbooks;
+package one.flexo.nibbler;
 
 /**
  * Top level info related to the mod.  Real important stuff here! ...and yes I know constants are typically all
@@ -13,14 +13,14 @@ package one.flexo.barkbooks;
  *
  * @author "oneandonlyflexo"
  */
-public class ModInfo {
+public class NibblerInfo {
 
-	public static final String modid = "barkbooks";
-	public static final String name = "Bark Books";
+	public static final String modid = "nibbler";
+	public static final String name = "Nibbler";
 
 	/**This gets replaced with a value from build.properties during the gradle build. */
 	public static final String version = /*${gradle.mod_version}*/ "0.1";
 
-	public static final String description = "A micro-mod that adds bark-covered books.";
+	public static final String description = "Library mod for oneandonlyflexo's mods.";
 
 }

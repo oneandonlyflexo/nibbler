@@ -1,4 +1,4 @@
-package one.flexo.barkbooks.util;
+package one.flexo.nibbler.util;
 
 import java.lang.ref.WeakReference;
 import java.util.Collection;
@@ -11,7 +11,7 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 
-public final class FlexoUtil {
+public final class NibblerUtil {
 
 	public static boolean notnull(WeakReference<?> weakRef) {
 		return weakRef != null && weakRef.get() != null;

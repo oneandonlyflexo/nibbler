@@ -1,11 +1,11 @@
 /*******************************************************************************
  * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
- * https://creativecommons.org/licenses/by-nc-nd/4.0/
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
  *
- * This file is part of Bark Books, which is open source:
- * https://github.com/oneandonlyflexo/barkbooks
+ * This file is part of Nibbler, which is open source:
+ * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.barkbooks;
+package one.flexo.nibbler;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -20,15 +20,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 
 @Mod.EventBusSubscriber
-@ObjectHolder("barkbooks")
-public class ModBlocks {
-
-	//TODO: get some bark bookcases!
+@ObjectHolder("nibbler")
+public class NibblerBlocks {
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(
-				//Nothing here :(
+				//Nothing here
 				);
 
 	}
@@ -36,7 +34,7 @@ public class ModBlocks {
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(
-				//Nothing here :(
+				//Nothing here
 				);
 
 		registerTileEntities();

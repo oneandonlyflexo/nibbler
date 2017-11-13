@@ -1,4 +1,4 @@
-package one.flexo.barkbooks.util;
+package one.flexo.nibbler.util;
 
 public interface IModelRegister {
 
