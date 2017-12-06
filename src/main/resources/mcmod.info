@@ -11,8 +11,8 @@
   "credits": "The Forge team of course.",
   "logoFile": "assets/nibbler/logo.png",
   "screenshots": [],
-  "requiredMods": ["botania"],
-  "dependencies": ["required-after:botania;"],
+  "requiredMods": [],
+  "dependencies": [],
   "useDependencyInformation": true
 }
 ]

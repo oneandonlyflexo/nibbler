@@ -1,14 +1,19 @@
 /*******************************************************************************
- * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
+ * Copyright (C) ${year} ${user}
  * https://creativecommons.org/licenses/by-nc-sa/4.0/
- * 
+ *
  * This file is part of Nibbler, which is open source:
  * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.nibbler.registry;
+package one.flexo.nibbler;
 
-public interface ModelRegisteredObject {
+/**
+ * Nom nom nom! Enum interface
+ *
+ * @author "oneandonlyflexo"
+ */
+public interface INibbleEnum extends INibble {
 
-	void registerModels();
+	public int meta();
 
 }

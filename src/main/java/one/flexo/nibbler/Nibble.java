@@ -5,7 +5,7 @@
  * This file is part of Nibbler, which is open source:
  * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
-package one.flexo.nibbler.util;
+package one.flexo.nibbler;
 
 import java.util.function.IntFunction;
 
@@ -16,22 +16,31 @@ import net.minecraft.util.ResourceLocation;
  *
  * @author "oneandonlyflexo"
  */
-public class NibblerName extends ResourceLocation {
+public class Nibble extends ResourceLocation {
 
 
 	private IntFunction<String> metaToPath;
 
-	public NibblerName(String resourceDomainIn, String resourcePathIn) {
+	public Nibble(String resourceDomainIn, String resourcePathIn) {
 		super(resourceDomainIn, resourcePathIn);
 	}
 
-	public NibblerName(String resourceName) {
+	public Nibble(String resourceName) {
 		super(resourceName);
 	}
 
-	public NibblerName withMeta(IntFunction<String> metaToPath) {
+	public Nibble withMeta(IntFunction<String> metaToPath) {
 		this.metaToPath = metaToPath;
 		return this;
+	}
+
+	public String getResourceName() {
+		return this.toString();
+	}
+
+	public String getMetaName(int meta) {
+		String path = (metaToPath == null) ? this.resourcePath : metaToPath.apply(meta);
+		return this.resourceDomain + ":" + path;
 	}
 
 	public String getUnlocalizedName() {

@@ -1,3 +1,10 @@
+/*******************************************************************************
+ * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
+ * https://creativecommons.org/licenses/by-nc-sa/4.0/
+ *
+ * This file is part of Nibbler, which is open source:
+ * https://github.com/oneandonlyflexo/nibbler
+ ******************************************************************************/
 package one.flexo.nibbler.block;
 
 import net.minecraft.block.Block;
@@ -8,24 +15,31 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import one.flexo.nibbler.registry.*;
-import one.flexo.nibbler.util.NibblerName;
+import one.flexo.nibbler.INibble;
+import one.flexo.nibbler.Nibble;
+import one.flexo.nibbler.registry.ModelRegisteredObject;
+import one.flexo.nibbler.registry.NibblerRegisteredObject;
 
-public class NibblerBlock extends Block implements ModelRegisteredObject {
+public class NibblerBlock extends Block implements INibble, ModelRegisteredObject {
 
-	public final NibblerName name;
+	public final Nibble name;
 
 	public NibblerBlock(String modid, String name, Material material, CreativeTabs creativeTab) {
 		super(material);
 		if(creativeTab != null) {
 			setCreativeTab(creativeTab);
 		}
-		this.name = new NibblerName(modid, name);
+		this.name = new Nibble(modid, name);
 		setRegistryName(name);
 		setUnlocalizedName(this.name.getUnlocalizedName());
 		if(this instanceof NibblerRegisteredObject) {
-			NibblerRegistry.addBlockForRegistry(this, true);
+			((NibblerRegisteredObject)this).getRegistry().addBlockForRegistry(this, true);
 		}
+	}
+
+	@Override
+	public Nibble nibble() {
+		return this.name;
 	}
 
 	protected boolean registerInCreative() {

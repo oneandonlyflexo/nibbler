@@ -7,10 +7,6 @@
  ******************************************************************************/
 package one.flexo.nibbler.proxy;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
@@ -40,25 +36,6 @@ public class ClientProxy extends CommonProxy {
 	public static void registerModels(ModelRegistryEvent event) {
 		NibblerRegistry.initModels();
 	}
-
-	@Override
-	public boolean playerIsInCreativeMode(EntityPlayer player) {
-		if (player instanceof EntityPlayerMP) {
-			EntityPlayerMP entityPlayerMP = (EntityPlayerMP)player;
-			return entityPlayerMP.interactionManager.isCreative();
-		}
-		else if (player instanceof EntityPlayerSP) {
-			return Minecraft.getMinecraft().playerController.isInCreativeMode();
-		}
-		return false;
-	}
-
-	@Override
-	public boolean isDedicatedServer() {
-		return false;
-	}
-
-
 
 	private void initRenderers() {
 

@@ -14,36 +14,40 @@ import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
-import one.flexo.nibbler.block.NibblerBlock;
+import one.flexo.nibbler.INibble;
 import one.flexo.nibbler.item.NibblerBlockItem;
-import one.flexo.nibbler.item.NibblerItem;
 
-
+/**
+ * This class is used for making automatically registering items easier.  All a mod has to do to make it so that
+ * blocks/items get auto-registered is create a mod-local NibblerRegistry and then have its blocks/items implement
+ * NibblerRegisteredObject.  The mod also has to make sure that when you would normally register blocks/items, the
+ * mod-local NibblerRegistry has it's registration methods called.
+ *
+ * @author "oneandonlyflexo"
+ */
 @Mod.EventBusSubscriber
 public class NibblerRegistry {
 
-	private static ArrayList<NibblerBlock> blocks = new ArrayList<>();
-	private static ArrayList<NibblerBlock> blockItems = new ArrayList<>();
-	private static ArrayList<NibblerItem> items = new ArrayList<>();
+	private ArrayList<Block> blocks = new ArrayList<>();
+	private ArrayList<Block> blockItems = new ArrayList<>();
+	private ArrayList<Item> items = new ArrayList<>();
 
-	public static void addBlockForRegistry(NibblerBlock block, boolean addItem) {
+	public <B extends Block & INibble> void addBlockForRegistry(B block, boolean addItem) {
 		blocks.add(block);
 		if(addItem) {
 			blockItems.add(block);
 		}
 	}
 
-	public static void addItemForRegistry(NibblerItem item) {
+	public <I extends Item & INibble> void addItemForRegistry(I item) {
 		items.add(item);
 	}
 
-	@SubscribeEvent
-	public static void registerBlocks(RegistryEvent.Register<Block> event) {
+	public void registerBlocks(RegistryEvent.Register<Block> event) {
 		IForgeRegistry<Block> registry = event.getRegistry();
 		for(int i = 0; i < blocks.size(); i++) {
 			registry.register(blocks.get(i));
@@ -51,15 +55,14 @@ public class NibblerRegistry {
 
 	}
 
-	@SubscribeEvent
-	public static void registerItems(RegistryEvent.Register<Item> event) {
+	public void registerItems(RegistryEvent.Register<Item> event) {
 		IForgeRegistry<Item> registry = event.getRegistry();
 		for(int i = 0; i < items.size(); i++) {
 			registry.register(items.get(i));
 		}
 
 		for(int i = 0; i < blockItems.size(); i++) {
-			registry.register(new NibblerBlockItem(blockItems.get(i)));
+			registry.register(new NibblerBlockItem((Block & INibble)blockItems.get(i)));
 		}
 
 		for(int i = 0; i < blocks.size(); i++) {
