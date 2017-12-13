@@ -14,8 +14,6 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import one.flexo.nibbler.INibbleEnum;
 
 public class NibblerEnumItem<T extends Enum<T> & INibbleEnum> extends NibblerItem {
@@ -56,7 +54,6 @@ public class NibblerEnumItem<T extends Enum<T> & INibbleEnum> extends NibblerIte
 		return "item." + types[meta].nibble().getUnlocalizedName();
 	}
 
-	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels() {
 		for (int i = 0; i < types.length; i++) {

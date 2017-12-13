@@ -14,8 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import one.flexo.nibbler.item.NibblerItem;
 import one.flexo.nibbler.proxy.CommonProxy;
 import one.flexo.nibbler.registry.NibblerRegisteredObject;
@@ -65,7 +63,6 @@ public class Nibbler
 			return "nibbler";
 		}
 		@Override
-		@SideOnly(Side.CLIENT)
 		public ItemStack getTabIconItem() {
 			return new ItemStack(logo);
 		}

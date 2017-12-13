@@ -7,11 +7,13 @@
  ******************************************************************************/
 package one.flexo.nibbler.proxy;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.*;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import one.flexo.nibbler.registry.NibblerRegistry;
+import one.flexo.nibbler.registry.ModelRegisteredObject;
 
 @Mod.EventBusSubscriber
 public class ClientProxy extends CommonProxy {
@@ -34,7 +36,16 @@ public class ClientProxy extends CommonProxy {
 
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent event) {
-		NibblerRegistry.initModels();
+
+		for(Object block : Block.REGISTRY) {
+			if(block instanceof ModelRegisteredObject)
+				((ModelRegisteredObject) block).registerModels();
+		}
+
+		for(Object item : Item.REGISTRY) {
+			if(item instanceof ModelRegisteredObject)
+				((ModelRegisteredObject) item).registerModels();
+		}
 	}
 
 	private void initRenderers() {

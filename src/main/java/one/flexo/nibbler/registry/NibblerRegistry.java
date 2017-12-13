@@ -15,8 +15,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import one.flexo.nibbler.INibble;
 import one.flexo.nibbler.item.NibblerBlockItem;
@@ -75,18 +73,5 @@ public class NibblerRegistry {
 
 	public static void registerTile(Class<? extends TileEntity> clazz, Block block) {
 		GameRegistry.registerTileEntity(clazz, block.getRegistryName().toString());
-	}
-
-	@SideOnly(Side.CLIENT)
-	public static void initModels() {
-		for(Object block : Block.REGISTRY) {
-			if(block instanceof ModelRegisteredObject)
-				((ModelRegisteredObject) block).registerModels();
-		}
-
-		for(Object item : Item.REGISTRY) {
-			if(item instanceof ModelRegisteredObject)
-				((ModelRegisteredObject) item).registerModels();
-		}
 	}
 }
