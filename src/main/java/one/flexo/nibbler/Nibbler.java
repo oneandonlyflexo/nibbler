@@ -7,10 +7,7 @@
  ******************************************************************************/
 package one.flexo.nibbler;
 
-import org.apache.logging.log4j.Logger;
-
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
@@ -39,9 +36,7 @@ public class Nibbler
 	@SidedProxy(clientSide="one.flexo.nibbler.proxy.ClientProxy", serverSide="one.flexo.nibbler.proxy.ServerProxy")
 	public static CommonProxy proxy;
 
-	public static Logger logger;
-
-	public static NibblerRegistry registry;
+	public static final NibblerRegistry registry = new NibblerRegistry();
 
 	private static class LogoItem extends NibblerItem implements NibblerRegisteredObject {
 		public LogoItem(String modid, String name, CreativeTabs tab) {
@@ -57,7 +52,6 @@ public class Nibbler
 		}
 	};
 
-	public static CreativeTabs tab;
 
 	public static NibblerItem logo;
 
@@ -65,20 +59,9 @@ public class Nibbler
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		logger = event.getModLog();
 		proxy.preInit(event);
 		registry = new NibblerRegistry();
 		logo = new LogoItem(NibblerInfo.modid, "nibbler", null);
-		tab = new CreativeTabs("nibbler") {
-			@Override
-			public String getTabLabel() {
-				return "nibbler";
-			}
-			@Override
-			public ItemStack getTabIconItem() {
-				return new ItemStack(logo);
-			}
-		};
 	}
 
 	@Mod.EventHandler
