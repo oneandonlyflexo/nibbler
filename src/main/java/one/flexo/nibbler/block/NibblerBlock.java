@@ -13,10 +13,13 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import one.flexo.nibbler.INibble;
 import one.flexo.nibbler.Nibble;
 import one.flexo.nibbler.registry.ModelRegisteredObject;
 import one.flexo.nibbler.registry.NibblerRegisteredObject;
+import org.lwjgl.opencl.CL;
 
 public class NibblerBlock extends Block implements INibble, ModelRegisteredObject {
 
@@ -45,11 +48,12 @@ public class NibblerBlock extends Block implements INibble, ModelRegisteredObjec
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 		registerCustomItemblock(this, 1);
 	}
 
-
+	@SideOnly(Side.CLIENT)
 	public static void registerCustomItemblock(NibblerBlock b, int metaCount) {
 		for(int i = 0; i < metaCount; i++) {
 			ModelResourceLocation mrl = new ModelResourceLocation(b.name.getItemBlockName(i), "inventory");

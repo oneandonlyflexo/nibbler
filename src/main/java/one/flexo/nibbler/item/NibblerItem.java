@@ -11,6 +11,8 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import one.flexo.nibbler.INibble;
 import one.flexo.nibbler.Nibble;
 import one.flexo.nibbler.registry.ModelRegisteredObject;
@@ -42,6 +44,7 @@ public class NibblerItem extends Item implements INibble, ModelRegisteredObject 
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(name, "inventory"));
 	}

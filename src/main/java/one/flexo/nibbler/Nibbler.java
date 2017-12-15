@@ -41,7 +41,7 @@ public class Nibbler
 
 	public static Logger logger;
 
-	public static final NibblerRegistry registry = new NibblerRegistry();
+	public static NibblerRegistry registry;
 
 	private static class LogoItem extends NibblerItem implements NibblerRegisteredObject {
 		public LogoItem(String modid, String name, CreativeTabs tab) {
@@ -57,18 +57,9 @@ public class Nibbler
 		}
 	};
 
-	public static CreativeTabs tab = new CreativeTabs("nibbler") {
-		@Override
-		public String getTabLabel() {
-			return "nibbler";
-		}
-		@Override
-		public ItemStack getTabIconItem() {
-			return new ItemStack(logo);
-		}
-	};
+	public static CreativeTabs tab;
 
-	public static final NibblerItem logo = new LogoItem(NibblerInfo.modid, "nibbler", null);
+	public static NibblerItem logo;
 
 	public static final Nibble unknown = new Nibble(NibblerInfo.modid, "unknown");
 
@@ -76,6 +67,18 @@ public class Nibbler
 	public void preInit(FMLPreInitializationEvent event) {
 		logger = event.getModLog();
 		proxy.preInit(event);
+		registry = new NibblerRegistry();
+		logo = new LogoItem(NibblerInfo.modid, "nibbler", null);
+		tab = new CreativeTabs("nibbler") {
+			@Override
+			public String getTabLabel() {
+				return "nibbler";
+			}
+			@Override
+			public ItemStack getTabIconItem() {
+				return new ItemStack(logo);
+			}
+		};
 	}
 
 	@Mod.EventHandler

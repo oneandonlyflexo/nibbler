@@ -71,7 +71,7 @@ public class NibblerRegistry {
 		}
 	}
 
-	public static void registerTile(Class<? extends TileEntity> clazz, Block block) {
-		GameRegistry.registerTileEntity(clazz, block.getRegistryName().toString());
+	public static void registerTile(Class<? extends TileEntity> theClass, Block block) {
+		GameRegistry.registerTileEntity(theClass, block.getRegistryName().toString());
 	}
 }

@@ -35,7 +35,6 @@ public abstract class CommonProxy {
 
 	/**
 	 * Run before anything else. Read your config, create blocks, items, etc, and register them with the GameRegistry
-	 * @param event
 	 */
 	public void preInit(FMLPreInitializationEvent e) {
 	}
@@ -43,7 +42,6 @@ public abstract class CommonProxy {
 	/**
 	 * Do your mod setup. Build whatever data structures you care about. Register recipes,
 	 * send FMLInterModComms messages to other mods.
-	 * @param e
 	 */
 	public void init(FMLInitializationEvent e) {
 
@@ -51,7 +49,6 @@ public abstract class CommonProxy {
 
 	/**
 	 * Handle interaction with other mods, complete your setup based on this.
-	 * @param e
 	 */
 	public void postInit(FMLPostInitializationEvent e) {
 
