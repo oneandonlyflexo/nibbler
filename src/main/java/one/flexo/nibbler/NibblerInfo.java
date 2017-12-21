@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright (C) 2017 Jeremy Grozavescu <oneandonlyflexo>
  * https://creativecommons.org/licenses/by-nc-sa/4.0/
- * 
+ *
  * This file is part of Nibbler, which is open source:
  * https://github.com/oneandonlyflexo/nibbler
  ******************************************************************************/
@@ -19,7 +19,7 @@ public class NibblerInfo {
 	public static final String name = "Nibbler";
 
 	/**This gets replaced with a value from build.properties during the gradle build. */
-	public static final String version = /*${gradle.mod_version}*/ "0.1";
+	public static final String version = /*${gradle.mod_version}*/ "0.4";
 
 	public static final String description = "Library mod for oneandonlyflexo's mods.";
 

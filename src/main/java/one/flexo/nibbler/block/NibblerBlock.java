@@ -19,7 +19,6 @@ import one.flexo.nibbler.INibble;
 import one.flexo.nibbler.Nibble;
 import one.flexo.nibbler.registry.ModelRegisteredObject;
 import one.flexo.nibbler.registry.NibblerRegisteredObject;
-import org.lwjgl.opencl.CL;
 
 public class NibblerBlock extends Block implements INibble, ModelRegisteredObject {
 
@@ -51,6 +50,11 @@ public class NibblerBlock extends Block implements INibble, ModelRegisteredObjec
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 		registerCustomItemblock(this, 1);
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static void registerCustomItemblock(NibblerBlock b) {
+		registerCustomItemblock(b, 1);
 	}
 
 	@SideOnly(Side.CLIENT)

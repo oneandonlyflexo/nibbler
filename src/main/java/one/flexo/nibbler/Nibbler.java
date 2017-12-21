@@ -27,7 +27,7 @@ name = NibblerInfo.name,
 version = NibblerInfo.version,
 useMetadata = true,
 acceptedMinecraftVersions = "[1.12,1.12.2]",
-acceptableRemoteVersions = "[0.2]")
+acceptableRemoteVersions = "[0.3]")
 public class Nibbler
 {
 	@Mod.Instance
@@ -43,9 +43,6 @@ public class Nibbler
 			super(modid, name, tab);
 		}
 
-		/* (non-Javadoc)
-		 * @see one.flexo.nibbler.registry.NibblerRegisteredObject#getRegistry()
-		 */
 		@Override
 		public NibblerRegistry getRegistry() {
 			return registry;
@@ -60,7 +57,6 @@ public class Nibbler
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		proxy.preInit(event);
-		registry = new NibblerRegistry();
 		logo = new LogoItem(NibblerInfo.modid, "nibbler", null);
 	}
 
