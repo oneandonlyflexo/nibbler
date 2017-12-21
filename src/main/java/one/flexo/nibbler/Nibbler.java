@@ -27,7 +27,7 @@ name = NibblerInfo.name,
 version = NibblerInfo.version,
 useMetadata = true,
 acceptedMinecraftVersions = "[1.12,1.12.2]",
-acceptableRemoteVersions = "[0.3]")
+acceptableRemoteVersions = "[0.3,)")
 public class Nibbler
 {
 	@Mod.Instance
